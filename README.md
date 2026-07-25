@@ -25,3 +25,7 @@ useTransform & Scroll Bindings : When it came to tradeoffs and decisions I've ma
 
 ## What I Would Improve With More Time
 Better Understanding of Framer Motion & Animations : With more time I would spend some time really understanding how Framer Motion works under the hood, and do a better job with optimizing animations for this particular project, making sure scroll performance is buttery smooth on mobile, and experiment with more interesting layout projections.
+
+## Public API Endpoint
+The telemetry data consumed by this application is served from the following public API endpoint:
+- [https://atomity-frontend-challenge-pi.vercel.app/api/dashboard](https://atomity-frontend-challenge-pi.vercel.app/api/dashboard)
