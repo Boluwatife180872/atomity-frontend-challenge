@@ -48,7 +48,8 @@ function ApiResourceUnfold({ items, progress }: { items: DrillItem[]; progress: 
     >
       <div className="relative h-full overflow-hidden rounded-xl">
         <motion.div
-          className="absolute top-[15%] origin-left rounded-lg bg-accent-primary shadow-[0_18px_60px_rgba(80,210,141,0.26)]"
+          className="absolute top-[22%] origin-left rounded-lg bg-accent-primary sm:top-[15%]"
+          style={{ boxShadow: "var(--shadow-accent-bar)" }}
           animate={{
             left: `${10.5 - revealProgress * 0.5}%`,
             width: `${18 + revealProgress * 72}%`,
@@ -58,7 +59,7 @@ function ApiResourceUnfold({ items, progress }: { items: DrillItem[]; progress: 
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         />
 
-        <div className="absolute inset-x-[10%] top-[15%] flex gap-3">
+        <div className="absolute inset-x-[4%] top-[22%] flex gap-[2px] sm:inset-x-[6%] sm:top-[15%] sm:gap-1 md:inset-x-[10%] md:gap-3">
           {items.map((item, index) => {
             const height = 74 + (item.total / maxTotal) * 52;
             const offset = (index - (items.length - 1) / 2) * 10;
@@ -76,13 +77,14 @@ function ApiResourceUnfold({ items, progress }: { items: DrillItem[]; progress: 
                 transition={{ duration: 0.9, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
               >
                 <motion.div
-                  className="relative mx-auto flex w-full flex-col justify-end overflow-hidden rounded-lg border border-white/35 bg-accent-primary shadow-[0_14px_40px_rgba(80,210,141,0.2)]"
+                  className="relative mx-auto flex w-full flex-col justify-end overflow-hidden rounded-lg border border-white/35 bg-accent-primary"
+                  style={{ boxShadow: "var(--shadow-accent-column)" }}
                   animate={{ height }}
                   transition={{ duration: 1, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <div className="absolute inset-0 bg-white/10" />
                   <motion.div
-                    className="absolute left-1/2 top-4 flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-md border border-white/35 bg-white/15 text-[10px] font-semibold text-white shadow-sm"
+                    className="absolute left-1/2 top-2 flex h-6 w-6 -translate-x-1/2 items-center justify-center rounded-md border border-white/35 bg-white/15 text-[7px] font-semibold text-white shadow-sm sm:top-4 sm:h-9 sm:w-9 sm:text-[10px]"
                     animate={{
                       opacity: Math.max(0, (splitProgress - 0.12) / 0.88),
                       scale: 0.88 + splitProgress * 0.12,
@@ -93,12 +95,12 @@ function ApiResourceUnfold({ items, progress }: { items: DrillItem[]; progress: 
                   </motion.div>
                 </motion.div>
                 <motion.div
-                  className="mt-3 text-center"
+                  className="mt-1 text-center sm:mt-3"
                   animate={{ opacity: Math.max(0, (splitProgress - 0.25) / 0.75), y: splitProgress ? 0 : -6 }}
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <p className="text-sm font-semibold text-text-primary">{item.name}</p>
-                  <p className="text-xs text-text-secondary">{formatCurrency(item.total)}</p>
+                  <p className="text-[10px] font-semibold text-text-primary sm:text-sm">{item.name}</p>
+                  <p className="text-[9px] text-text-secondary sm:text-xs">{formatCurrency(item.total)}</p>
                 </motion.div>
               </motion.div>
             );
@@ -183,15 +185,38 @@ export function ScrollDrillSection() {
 
   if (isLoading) {
     return (
-      <section aria-busy="true" className="p-8">
-        <p className="text-text-secondary">Loading cluster data...</p>
+      <section aria-busy="true" className="flex items-center justify-center min-h-[60vh] px-4">
+        <div className="w-full max-w-md">
+          <Card className="p-8 text-center flex flex-col items-center justify-center space-y-4">
+            <div className="relative w-12 h-12">
+              <div className="absolute inset-0 rounded-full border-4 border-accent-primary/20 animate-pulse" />
+              <div className="absolute inset-0 rounded-full border-4 border-accent-primary border-t-transparent animate-spin" />
+            </div>
+            <div className="space-y-1">
+              <h3 className="text-base font-semibold text-text-primary">Loading Cloud Telemetry</h3>
+              <p className="text-xs text-text-secondary">Analyzing cluster nodes, namespaces, and pods...</p>
+            </div>
+          </Card>
+        </div>
       </section>
     );
   }
   if (isError) {
     return (
-      <section role="alert" className="p-8">
-        <p className="text-accent-error">{(error as Error).message}</p>
+      <section role="alert" className="flex items-center justify-center min-h-[60vh] px-4">
+        <div className="w-full max-w-md">
+          <Card className="p-8 text-center flex flex-col items-center justify-center space-y-4">
+            <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center text-accent-error">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+            </div>
+            <div className="space-y-1">
+              <h3 className="text-base font-semibold text-text-primary">Failed to Load Dashboard</h3>
+              <p className="text-xs text-accent-error">{(error as Error).message || "An unexpected error occurred while fetching telemetry data."}</p>
+            </div>
+          </Card>
+        </div>
       </section>
     );
   }
@@ -272,9 +297,12 @@ export function ScrollDrillSection() {
           className="absolute inset-0 flex items-center justify-center px-4 py-12 sm:px-8 sm:py-16"
         >
           <div className="w-full max-w-3xl">
-            <div className="mb-3 flex items-center justify-between rounded-full border border-gray-200/70 bg-white/80 px-4 py-2 shadow-sm backdrop-blur">
-              <p className="text-sm font-medium text-text-primary">Cloud Cost Explorer</p>
-              <p className="text-xs text-text-secondary">Cluster / Namespace / Pod / Resource</p>
+            <div
+              className="mb-3 flex flex-col items-center justify-between gap-1 rounded-full px-3 py-2 shadow-sm backdrop-blur sm:flex-row sm:px-4"
+              style={{ backgroundColor: "var(--glass-bg)", border: "1px solid var(--glass-border)" }}
+            >
+              <p className="text-xs font-medium text-text-primary sm:text-sm">Cloud Cost Explorer</p>
+              <p className="text-[10px] text-text-secondary sm:text-xs">Cluster / Namespace / Pod / Resource</p>
             </div>
 
             {showDashboardChart && (
@@ -287,16 +315,25 @@ export function ScrollDrillSection() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -8 }}
                       transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                      className="text-text-primary text-lg font-semibold"
+                      className="text-sm font-semibold text-text-primary sm:text-lg"
                     >
                       {current.title}
                     </motion.h2>
                   </AnimatePresence>
-                  <span className="rounded-full bg-bg-surface-hover px-3 py-1 text-xs font-medium text-text-secondary">
+                    <span
+                      className="flex-shrink-0 rounded-full px-3 py-1 text-xs font-medium"
+                      style={{ backgroundColor: "var(--badge-stage-bg)", color: "var(--badge-stage-text)" }}
+                    >
                     Stage {stage + 1} / {CHAPTER_COUNT}
                   </span>
                 </div>
-                <div className="relative min-h-64 rounded-xl bg-[linear-gradient(to_right,rgba(3,3,3,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(3,3,3,0.06)_1px,transparent_1px)] bg-[size:25%_25%] py-4">
+                <div
+                  className="relative min-h-48 rounded-xl bg-[length:25%_25%] py-4 sm:min-h-64"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to right, var(--grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px)",
+                  }}
+                >
                   <motion.div
                     animate={{ opacity: chartFade, scale: showApiUnfold ? 0.96 : 1 }}
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -357,17 +394,20 @@ export function ScrollDrillSection() {
               </motion.div>
               )}
               {!current.table && (
-                <div className="relative min-h-[360px]">
-                  <div className="mb-4 flex items-center justify-between gap-4">
+                <div className="relative min-h-[280px] sm:min-h-[360px]">
+                  <div className="mb-3 flex flex-col items-start gap-1 sm:mb-4 sm:flex-row sm:items-center sm:gap-4">
                     <motion.h2
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                      className="text-text-primary text-lg font-semibold"
+                      className="text-base font-semibold text-text-primary sm:text-lg"
                     >
                       Resources from {heroPath.pod.name}
                     </motion.h2>
-                    <span className="rounded-full bg-bg-surface-hover px-3 py-1 text-xs font-medium text-text-secondary">
+                  <span
+                className="flex-shrink-0 rounded-full px-3 py-1 text-xs font-medium"
+                style={{ backgroundColor: "var(--badge-stage-bg)", color: "var(--badge-stage-text)" }}
+              >
                       Stage {stage + 1} / {CHAPTER_COUNT}
                     </span>
                   </div>

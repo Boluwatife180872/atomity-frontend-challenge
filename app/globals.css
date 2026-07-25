@@ -11,9 +11,9 @@
   --color-text-secondary: #706663;
   --color-text-muted: #8f837f;
 
-  --color-accent-primary: #3b604e; 
+  --color-accent-primary: #3b604e;
   --color-accent-success: #3b604e;
-  --color-accent-error: #b2533e;   
+  --color-accent-error: #b2533e;
   --color-accent-warning: #c48b45;
 
   --color-metric-cpu: #5a504e;
@@ -31,4 +31,45 @@
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
+
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(229, 231, 235, 0.7);
+  --grid-color: rgba(3, 3, 3, 0.06);
+  --card-border: rgba(229, 231, 235, 0.6);
+  --shadow-accent-bar: 0 18px 60px rgba(80, 210, 141, 0.26);
+  --shadow-accent-column: 0 14px 40px rgba(80, 210, 141, 0.2);
+  --shadow-accent-split: 0 8px 28px rgba(80, 210, 141, 0.28);
+  --badge-stage-bg: var(--color-bg-surface-hover);
+  --badge-stage-text: var(--color-text-secondary);
+}
+
+[data-theme="dark"] {
+  --color-bg-primary: #121413;
+  --color-bg-surface: #1A1D1B;
+  --color-bg-surface-hover: #242826;
+
+  --color-text-primary: #E6E8E6;
+  --color-text-secondary: #A0A5A1;
+  --color-text-muted: #7A807C;
+
+  --color-accent-primary: #58816A;
+  --color-accent-success: #58816A;
+  --color-accent-error: #C76A5A;
+  --color-accent-warning: #D4A84B;
+
+  --color-metric-cpu: #A0A5A1;
+  --color-metric-ram: #A0A5A1;
+  --color-metric-storage: #A0A5A1;
+  --color-metric-network: #A0A5A1;
+  --color-metric-gpu: #A0A5A1;
+
+  --glass-bg: rgba(26, 29, 27, 0.85);
+  --glass-border: rgba(43, 48, 45, 0.7);
+  --grid-color: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(43, 48, 45, 0.8);
+  --shadow-accent-bar: 0 18px 60px rgba(88, 129, 106, 0.45);
+  --shadow-accent-column: 0 14px 40px rgba(88, 129, 106, 0.35);
+  --shadow-accent-split: 0 8px 28px rgba(88, 129, 106, 0.4);
+  --badge-stage-bg: #2A271D;
+  --badge-stage-text: #E5C98B;
 }

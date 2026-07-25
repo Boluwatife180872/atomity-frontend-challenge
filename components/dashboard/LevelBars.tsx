@@ -43,8 +43,8 @@ export function LevelBars({
   const tileProgress = Math.max(0, Math.min((splitProgress - 0.2) / 0.8, 1));
 
   return (
-    <motion.div layout className="relative h-44 px-4">
-      <motion.div layout className="flex items-end justify-between gap-4 h-full">
+    <motion.div layout className="relative h-32 px-2 sm:h-36 sm:px-4 md:h-44">
+      <motion.div layout className="flex items-end justify-between gap-1 h-full sm:gap-2 md:gap-4">
       {items.map((item, index) => {
         const heightPercent = (item.total / maxTotal) * 100;
         const isActive = item.id === activeItemId;
@@ -105,19 +105,19 @@ export function LevelBars({
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
-                <span className="absolute -top-[18px] left-1/2 -translate-x-1/2 text-text-secondary text-xs whitespace-nowrap leading-none">
+                <span className="absolute -top-[18px] left-1/2 -translate-x-1/2 text-text-secondary text-[10px] whitespace-nowrap leading-none sm:text-xs">
                   {formatCurrency(item.total)}
                 </span>
               </motion.div>
             </div>
-            <span className="text-text-primary text-sm font-medium mt-0.5">{item.name}</span>
+            <span className="w-full truncate text-center text-[11px] font-medium text-text-primary sm:text-sm">{item.name}</span>
           </Tag>
         );
       })}
       </motion.div>
 
       {hasSplit && activeItem && splitItems && (
-        <div className="pointer-events-none absolute inset-x-4 bottom-7 top-5">
+        <div className="pointer-events-none absolute inset-x-2 bottom-7 top-5 sm:inset-x-4">
           {splitItems.map((item, index) => {
             const sourceHeight = (activeItem.total / maxTotal) * 100;
             const segmentHeight = (item.total / activeItem.total) * sourceHeight;
@@ -156,10 +156,11 @@ export function LevelBars({
                 }}
                 transition={{ duration: splitMode === "fan" ? 0.65 : 0.45, ease: [0.16, 1, 0.3, 1] }}
               >
-                <motion.div
-                  className={`relative w-full bg-accent-primary shadow-[0_8px_28px_rgba(80,210,141,0.28)] ${
-                    splitMode === "tiles" ? "rounded-md" : "rounded-t-md"
-                  }`}
+                  <motion.div
+                    className={`relative w-full bg-accent-primary ${
+                      splitMode === "tiles" ? "rounded-md" : "rounded-t-md"
+                    }`}
+                    style={{ boxShadow: "var(--shadow-accent-split)" }}
                   animate={{
                     height: `${tileHeight}%`,
                     filter: `brightness(${1.04 + index * 0.035})`,
