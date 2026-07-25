@@ -15,6 +15,7 @@ interface LevelBarsProps {
   splitProgress?: number;
   splitMode?: "stack" | "fan" | "tiles";
   animateEntrance?: boolean;
+  settleInstantly?: boolean;
 }
 
 export function LevelBars({
@@ -27,6 +28,7 @@ export function LevelBars({
   splitProgress = 0,
   splitMode = "stack",
   animateEntrance = true,
+  settleInstantly = false,
 }: LevelBarsProps) {
   const maxTotal = Math.max(...items.map((i) => i.total));
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -41,7 +43,7 @@ export function LevelBars({
   const tileProgress = Math.max(0, Math.min((splitProgress - 0.2) / 0.8, 1));
 
   return (
-    <motion.div layout className="relative h-48 px-4">
+    <motion.div layout className="relative h-44 px-4">
       <motion.div layout className="flex items-end justify-between gap-4 h-full">
       {items.map((item, index) => {
         const heightPercent = (item.total / maxTotal) * 100;
@@ -49,6 +51,7 @@ export function LevelBars({
         const Tag = interactive ? motion.button : motion.div;
         const isMuted = focusMode && activeItemId !== null && !isActive;
         const activeSplitting = hasSplit && isActive;
+        const splitBaseOpacity = Math.max(0, 1 - splitProgress * 1.35);
 
         return (
           <Tag
@@ -61,14 +64,29 @@ export function LevelBars({
             className="flex flex-col items-center flex-1 h-full group"
             initial={prefersReducedMotion || !animateEntrance ? false : { opacity: 0, y: 24 }}
             animate={{
-              opacity: activeSplitting ? 1 - splitProgress * 0.75 : isMuted ? 0.34 : 1,
+              opacity: hasSplit
+                ? activeSplitting
+                  ? Math.max(0, 1 - splitProgress)
+                  : splitBaseOpacity * (isMuted ? 0.34 : 1)
+                : isMuted
+                ? 0.34
+                : 1,
               y: 0,
             }}
-            whileInView={{ opacity: activeSplitting ? 1 - splitProgress * 0.75 : isMuted ? 0.34 : 1, y: 0 }}
+            whileInView={{
+              opacity: hasSplit
+                ? activeSplitting
+                  ? Math.max(0, 1 - splitProgress)
+                  : splitBaseOpacity * (isMuted ? 0.34 : 1)
+                : isMuted
+                ? 0.34
+                : 1,
+              y: 0,
+            }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{
-              layout: { duration: 0.9, ease: [0.16, 1, 0.3, 1] },
-              duration: 0.7,
+              layout: { duration: settleInstantly ? 0 : 0.9, ease: [0.16, 1, 0.3, 1] },
+              duration: settleInstantly ? 0 : 0.7,
               delay: prefersReducedMotion ? 0 : index * 0.08,
               ease: [0.16, 1, 0.3, 1],
             }}
@@ -82,7 +100,10 @@ export function LevelBars({
                 animate={{
                   height: `${heightPercent}%`,
                 }}
-                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                transition={{
+                  duration: settleInstantly ? 0 : 0.9,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
               >
                 <span className="absolute -top-[18px] left-1/2 -translate-x-1/2 text-text-secondary text-xs whitespace-nowrap leading-none">
                   {formatCurrency(item.total)}

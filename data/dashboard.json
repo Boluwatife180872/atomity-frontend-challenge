@@ -13,52 +13,52 @@
               "id": "cluster-1-ns-1-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-1-ns-1",
-              "cpu": 285,
-              "ram": 334,
-              "storage": 440,
-              "network": 297,
-              "gpu": 307,
+              "cpu": 350,
+              "ram": 370,
+              "storage": 273,
+              "network": 303,
+              "gpu": 473,
               "efficiency": 88,
-              "total": 1663
+              "total": 1769
             },
             {
               "id": "cluster-1-ns-1-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-1-ns-1",
-              "cpu": 348,
-              "ram": 142,
-              "storage": 234,
-              "network": 121,
-              "gpu": 104,
-              "efficiency": 95,
-              "total": 949
+              "cpu": 245,
+              "ram": 262,
+              "storage": 159,
+              "network": 72,
+              "gpu": 111,
+              "efficiency": 98,
+              "total": 849
             },
             {
               "id": "cluster-1-ns-1-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-1-ns-1",
-              "cpu": 595,
-              "ram": 241,
-              "storage": 204,
-              "network": 69,
-              "gpu": 266,
-              "efficiency": 98,
-              "total": 1375
+              "cpu": 325,
+              "ram": 497,
+              "storage": 135,
+              "network": 98,
+              "gpu": 209,
+              "efficiency": 96,
+              "total": 1264
             },
             {
               "id": "cluster-1-ns-1-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-1-ns-1",
-              "cpu": 234,
-              "ram": 101,
-              "storage": 105,
-              "network": 55,
-              "gpu": 105,
-              "efficiency": 87,
-              "total": 600
+              "cpu": 101,
+              "ram": 129,
+              "storage": 36,
+              "network": 60,
+              "gpu": 118,
+              "efficiency": 93,
+              "total": 444
             }
           ],
-          "total": 4587
+          "total": 4326
         },
         {
           "id": "cluster-1-ns-2",
@@ -69,52 +69,52 @@
               "id": "cluster-1-ns-2-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-1-ns-2",
-              "cpu": 266,
-              "ram": 198,
-              "storage": 200,
-              "network": 86,
-              "gpu": 1,
-              "efficiency": 95,
-              "total": 751
+              "cpu": 328,
+              "ram": 145,
+              "storage": 169,
+              "network": 131,
+              "gpu": 191,
+              "efficiency": 88,
+              "total": 964
             },
             {
               "id": "cluster-1-ns-2-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-1-ns-2",
-              "cpu": 132,
-              "ram": 54,
-              "storage": 64,
-              "network": 52,
-              "gpu": 6,
-              "efficiency": 87,
-              "total": 308
+              "cpu": 89,
+              "ram": 107,
+              "storage": 36,
+              "network": 17,
+              "gpu": 37,
+              "efficiency": 85,
+              "total": 286
             },
             {
               "id": "cluster-1-ns-2-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-1-ns-2",
-              "cpu": 99,
-              "ram": 72,
-              "storage": 160,
-              "network": 77,
-              "gpu": 45,
-              "efficiency": 96,
-              "total": 453
+              "cpu": 138,
+              "ram": 59,
+              "storage": 158,
+              "network": 31,
+              "gpu": 16,
+              "efficiency": 85,
+              "total": 402
             },
             {
               "id": "cluster-1-ns-2-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-1-ns-2",
-              "cpu": 63,
-              "ram": 39,
-              "storage": 45,
-              "network": 11,
-              "gpu": 4,
-              "efficiency": 88,
-              "total": 162
+              "cpu": 42,
+              "ram": 54,
+              "storage": 61,
+              "network": 28,
+              "gpu": 1,
+              "efficiency": 94,
+              "total": 186
             }
           ],
-          "total": 1674
+          "total": 1838
         },
         {
           "id": "cluster-1-ns-3",
@@ -125,52 +125,52 @@
               "id": "cluster-1-ns-3-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-1-ns-3",
-              "cpu": 87,
-              "ram": 135,
-              "storage": 85,
-              "network": 40,
-              "gpu": 64,
-              "efficiency": 90,
-              "total": 411
+              "cpu": 208,
+              "ram": 76,
+              "storage": 143,
+              "network": 57,
+              "gpu": 57,
+              "efficiency": 93,
+              "total": 541
             },
             {
               "id": "cluster-1-ns-3-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-1-ns-3",
-              "cpu": 52,
-              "ram": 55,
-              "storage": 59,
-              "network": 16,
-              "gpu": 33,
-              "efficiency": 84,
-              "total": 215
+              "cpu": 44,
+              "ram": 83,
+              "storage": 42,
+              "network": 11,
+              "gpu": 22,
+              "efficiency": 99,
+              "total": 202
             },
             {
               "id": "cluster-1-ns-3-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-1-ns-3",
-              "cpu": 146,
-              "ram": 102,
-              "storage": 27,
-              "network": 47,
-              "gpu": 35,
-              "efficiency": 92,
-              "total": 357
+              "cpu": 164,
+              "ram": 99,
+              "storage": 60,
+              "network": 42,
+              "gpu": 27,
+              "efficiency": 83,
+              "total": 392
             },
             {
               "id": "cluster-1-ns-3-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-1-ns-3",
-              "cpu": 28,
-              "ram": 17,
+              "cpu": 51,
+              "ram": 15,
               "storage": 28,
-              "network": 20,
-              "gpu": 33,
-              "efficiency": 98,
-              "total": 126
+              "network": 11,
+              "gpu": 10,
+              "efficiency": 92,
+              "total": 115
             }
           ],
-          "total": 1109
+          "total": 1250
         },
         {
           "id": "cluster-1-ns-4",
@@ -181,55 +181,55 @@
               "id": "cluster-1-ns-4-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-1-ns-4",
-              "cpu": 575,
-              "ram": 179,
-              "storage": 209,
-              "network": 119,
-              "gpu": 289,
-              "efficiency": 98,
-              "total": 1371
+              "cpu": 379,
+              "ram": 322,
+              "storage": 120,
+              "network": 148,
+              "gpu": 120,
+              "efficiency": 87,
+              "total": 1089
             },
             {
               "id": "cluster-1-ns-4-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-1-ns-4",
-              "cpu": 80,
-              "ram": 180,
-              "storage": 114,
-              "network": 59,
-              "gpu": 96,
-              "efficiency": 96,
-              "total": 529
+              "cpu": 186,
+              "ram": 127,
+              "storage": 76,
+              "network": 67,
+              "gpu": 33,
+              "efficiency": 85,
+              "total": 489
             },
             {
               "id": "cluster-1-ns-4-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-1-ns-4",
-              "cpu": 132,
-              "ram": 245,
-              "storage": 151,
-              "network": 50,
-              "gpu": 30,
-              "efficiency": 96,
-              "total": 608
+              "cpu": 291,
+              "ram": 293,
+              "storage": 149,
+              "network": 44,
+              "gpu": 82,
+              "efficiency": 97,
+              "total": 859
             },
             {
               "id": "cluster-1-ns-4-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-1-ns-4",
-              "cpu": 141,
-              "ram": 94,
-              "storage": 98,
-              "network": 23,
-              "gpu": 63,
-              "efficiency": 88,
-              "total": 419
+              "cpu": 102,
+              "ram": 74,
+              "storage": 62,
+              "network": 26,
+              "gpu": 49,
+              "efficiency": 94,
+              "total": 313
             }
           ],
-          "total": 2927
+          "total": 2750
         }
       ],
-      "total": 10297
+      "total": 10164
     },
     {
       "id": "cluster-2",
@@ -244,52 +244,52 @@
               "id": "cluster-2-ns-1-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-2-ns-1",
-              "cpu": 1345,
-              "ram": 644,
-              "storage": 388,
-              "network": 446,
-              "gpu": 70,
-              "efficiency": 98,
-              "total": 2893
+              "cpu": 399,
+              "ram": 585,
+              "storage": 480,
+              "network": 434,
+              "gpu": 292,
+              "efficiency": 91,
+              "total": 2190
             },
             {
               "id": "cluster-2-ns-1-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-2-ns-1",
-              "cpu": 285,
-              "ram": 257,
-              "storage": 290,
-              "network": 102,
-              "gpu": 142,
-              "efficiency": 88,
-              "total": 1076
+              "cpu": 461,
+              "ram": 356,
+              "storage": 329,
+              "network": 120,
+              "gpu": 154,
+              "efficiency": 84,
+              "total": 1420
             },
             {
               "id": "cluster-2-ns-1-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-2-ns-1",
-              "cpu": 693,
-              "ram": 226,
-              "storage": 225,
-              "network": 192,
-              "gpu": 194,
-              "efficiency": 83,
-              "total": 1530
+              "cpu": 732,
+              "ram": 598,
+              "storage": 465,
+              "network": 266,
+              "gpu": 413,
+              "efficiency": 99,
+              "total": 2474
             },
             {
               "id": "cluster-2-ns-1-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-2-ns-1",
-              "cpu": 367,
-              "ram": 232,
-              "storage": 156,
-              "network": 65,
-              "gpu": 37,
-              "efficiency": 86,
-              "total": 857
+              "cpu": 224,
+              "ram": 153,
+              "storage": 111,
+              "network": 66,
+              "gpu": 91,
+              "efficiency": 94,
+              "total": 645
             }
           ],
-          "total": 6356
+          "total": 6729
         },
         {
           "id": "cluster-2-ns-2",
@@ -300,52 +300,52 @@
               "id": "cluster-2-ns-2-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-2-ns-2",
-              "cpu": 205,
-              "ram": 342,
-              "storage": 145,
-              "network": 104,
-              "gpu": 106,
-              "efficiency": 86,
-              "total": 902
+              "cpu": 324,
+              "ram": 239,
+              "storage": 202,
+              "network": 157,
+              "gpu": 14,
+              "efficiency": 88,
+              "total": 936
             },
             {
               "id": "cluster-2-ns-2-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-2-ns-2",
-              "cpu": 113,
-              "ram": 187,
-              "storage": 131,
-              "network": 22,
-              "gpu": 64,
-              "efficiency": 92,
-              "total": 517
+              "cpu": 98,
+              "ram": 154,
+              "storage": 55,
+              "network": 32,
+              "gpu": 78,
+              "efficiency": 90,
+              "total": 417
             },
             {
               "id": "cluster-2-ns-2-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-2-ns-2",
-              "cpu": 400,
-              "ram": 185,
-              "storage": 153,
-              "network": 47,
-              "gpu": 71,
-              "efficiency": 89,
-              "total": 856
+              "cpu": 312,
+              "ram": 244,
+              "storage": 193,
+              "network": 80,
+              "gpu": 77,
+              "efficiency": 86,
+              "total": 906
             },
             {
               "id": "cluster-2-ns-2-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-2-ns-2",
-              "cpu": 103,
-              "ram": 81,
-              "storage": 59,
-              "network": 26,
-              "gpu": 68,
-              "efficiency": 83,
-              "total": 337
+              "cpu": 145,
+              "ram": 99,
+              "storage": 88,
+              "network": 23,
+              "gpu": 53,
+              "efficiency": 84,
+              "total": 408
             }
           ],
-          "total": 2612
+          "total": 2667
         },
         {
           "id": "cluster-2-ns-3",
@@ -356,52 +356,52 @@
               "id": "cluster-2-ns-3-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-2-ns-3",
-              "cpu": 163,
-              "ram": 142,
-              "storage": 199,
-              "network": 55,
-              "gpu": 121,
-              "efficiency": 83,
-              "total": 680
+              "cpu": 194,
+              "ram": 297,
+              "storage": 56,
+              "network": 65,
+              "gpu": 34,
+              "efficiency": 98,
+              "total": 646
             },
             {
               "id": "cluster-2-ns-3-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-2-ns-3",
-              "cpu": 69,
-              "ram": 114,
+              "cpu": 84,
+              "ram": 116,
               "storage": 35,
               "network": 47,
-              "gpu": 4,
-              "efficiency": 84,
-              "total": 269
+              "gpu": 24,
+              "efficiency": 87,
+              "total": 306
             },
             {
               "id": "cluster-2-ns-3-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-2-ns-3",
-              "cpu": 231,
-              "ram": 128,
-              "storage": 59,
-              "network": 30,
-              "gpu": 73,
-              "efficiency": 89,
-              "total": 521
+              "cpu": 129,
+              "ram": 80,
+              "storage": 151,
+              "network": 75,
+              "gpu": 68,
+              "efficiency": 94,
+              "total": 503
             },
             {
               "id": "cluster-2-ns-3-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-2-ns-3",
-              "cpu": 63,
-              "ram": 40,
-              "storage": 19,
-              "network": 14,
-              "gpu": 7,
-              "efficiency": 96,
-              "total": 143
+              "cpu": 79,
+              "ram": 69,
+              "storage": 45,
+              "network": 19,
+              "gpu": 40,
+              "efficiency": 98,
+              "total": 252
             }
           ],
-          "total": 1613
+          "total": 1707
         },
         {
           "id": "cluster-2-ns-4",
@@ -412,55 +412,55 @@
               "id": "cluster-2-ns-4-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-2-ns-4",
-              "cpu": 454,
-              "ram": 293,
-              "storage": 185,
-              "network": 215,
-              "gpu": 218,
-              "efficiency": 83,
-              "total": 1365
+              "cpu": 490,
+              "ram": 556,
+              "storage": 361,
+              "network": 78,
+              "gpu": 234,
+              "efficiency": 89,
+              "total": 1719
             },
             {
               "id": "cluster-2-ns-4-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-2-ns-4",
-              "cpu": 260,
-              "ram": 271,
-              "storage": 87,
-              "network": 76,
-              "gpu": 119,
-              "efficiency": 94,
-              "total": 813
+              "cpu": 165,
+              "ram": 115,
+              "storage": 133,
+              "network": 37,
+              "gpu": 114,
+              "efficiency": 87,
+              "total": 564
             },
             {
               "id": "cluster-2-ns-4-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-2-ns-4",
-              "cpu": 346,
-              "ram": 153,
-              "storage": 235,
-              "network": 72,
-              "gpu": 128,
-              "efficiency": 96,
-              "total": 934
+              "cpu": 427,
+              "ram": 221,
+              "storage": 234,
+              "network": 161,
+              "gpu": 29,
+              "efficiency": 95,
+              "total": 1072
             },
             {
               "id": "cluster-2-ns-4-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-2-ns-4",
-              "cpu": 220,
-              "ram": 170,
-              "storage": 58,
-              "network": 28,
-              "gpu": 88,
-              "efficiency": 93,
-              "total": 564
+              "cpu": 194,
+              "ram": 148,
+              "storage": 46,
+              "network": 72,
+              "gpu": 21,
+              "efficiency": 96,
+              "total": 481
             }
           ],
-          "total": 3676
+          "total": 3836
         }
       ],
-      "total": 14257
+      "total": 14939
     },
     {
       "id": "cluster-3",
@@ -475,52 +475,52 @@
               "id": "cluster-3-ns-1-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-3-ns-1",
-              "cpu": 4104,
-              "ram": 3288,
-              "storage": 2198,
-              "network": 946,
-              "gpu": 528,
-              "efficiency": 91,
-              "total": 11064
+              "cpu": 3283,
+              "ram": 2635,
+              "storage": 1709,
+              "network": 1387,
+              "gpu": 984,
+              "efficiency": 95,
+              "total": 9998
             },
             {
               "id": "cluster-3-ns-1-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-3-ns-1",
-              "cpu": 1538,
-              "ram": 851,
-              "storage": 899,
-              "network": 276,
-              "gpu": 660,
-              "efficiency": 86,
-              "total": 4224
+              "cpu": 1250,
+              "ram": 1248,
+              "storage": 334,
+              "network": 516,
+              "gpu": 543,
+              "efficiency": 93,
+              "total": 3891
             },
             {
               "id": "cluster-3-ns-1-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-3-ns-1",
-              "cpu": 1485,
-              "ram": 960,
-              "storage": 630,
-              "network": 883,
-              "gpu": 1162,
-              "efficiency": 82,
-              "total": 5120
+              "cpu": 1104,
+              "ram": 1898,
+              "storage": 1466,
+              "network": 749,
+              "gpu": 1206,
+              "efficiency": 97,
+              "total": 6423
             },
             {
               "id": "cluster-3-ns-1-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-3-ns-1",
-              "cpu": 968,
-              "ram": 296,
-              "storage": 445,
-              "network": 184,
-              "gpu": 131,
-              "efficiency": 83,
-              "total": 2024
+              "cpu": 623,
+              "ram": 570,
+              "storage": 221,
+              "network": 120,
+              "gpu": 564,
+              "efficiency": 82,
+              "total": 2098
             }
           ],
-          "total": 22432
+          "total": 22410
         },
         {
           "id": "cluster-3-ns-2",
@@ -531,52 +531,52 @@
               "id": "cluster-3-ns-2-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-3-ns-2",
-              "cpu": 970,
-              "ram": 1441,
-              "storage": 542,
-              "network": 388,
-              "gpu": 519,
-              "efficiency": 84,
-              "total": 3860
+              "cpu": 1100,
+              "ram": 1254,
+              "storage": 666,
+              "network": 212,
+              "gpu": 882,
+              "efficiency": 92,
+              "total": 4114
             },
             {
               "id": "cluster-3-ns-2-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-3-ns-2",
-              "cpu": 443,
-              "ram": 223,
-              "storage": 379,
-              "network": 139,
-              "gpu": 189,
-              "efficiency": 91,
-              "total": 1373
+              "cpu": 507,
+              "ram": 213,
+              "storage": 109,
+              "network": 94,
+              "gpu": 259,
+              "efficiency": 85,
+              "total": 1182
             },
             {
               "id": "cluster-3-ns-2-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-3-ns-2",
-              "cpu": 843,
-              "ram": 795,
-              "storage": 629,
-              "network": 255,
-              "gpu": 363,
-              "efficiency": 84,
-              "total": 2885
+              "cpu": 1249,
+              "ram": 850,
+              "storage": 524,
+              "network": 410,
+              "gpu": 94,
+              "efficiency": 89,
+              "total": 3127
             },
             {
               "id": "cluster-3-ns-2-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-3-ns-2",
-              "cpu": 328,
-              "ram": 290,
-              "storage": 265,
-              "network": 146,
-              "gpu": 105,
-              "efficiency": 88,
-              "total": 1134
+              "cpu": 250,
+              "ram": 141,
+              "storage": 176,
+              "network": 75,
+              "gpu": 241,
+              "efficiency": 95,
+              "total": 883
             }
           ],
-          "total": 9252
+          "total": 9306
         },
         {
           "id": "cluster-3-ns-3",
@@ -587,52 +587,52 @@
               "id": "cluster-3-ns-3-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-3-ns-3",
-              "cpu": 578,
-              "ram": 413,
-              "storage": 718,
-              "network": 173,
-              "gpu": 490,
-              "efficiency": 94,
-              "total": 2372
+              "cpu": 936,
+              "ram": 458,
+              "storage": 262,
+              "network": 161,
+              "gpu": 338,
+              "efficiency": 98,
+              "total": 2155
             },
             {
               "id": "cluster-3-ns-3-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-3-ns-3",
-              "cpu": 164,
-              "ram": 301,
-              "storage": 190,
-              "network": 75,
-              "gpu": 167,
-              "efficiency": 95,
-              "total": 897
+              "cpu": 399,
+              "ram": 215,
+              "storage": 143,
+              "network": 64,
+              "gpu": 131,
+              "efficiency": 98,
+              "total": 952
             },
             {
               "id": "cluster-3-ns-3-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-3-ns-3",
-              "cpu": 397,
-              "ram": 213,
-              "storage": 488,
-              "network": 106,
-              "gpu": 169,
-              "efficiency": 95,
-              "total": 1373
+              "cpu": 334,
+              "ram": 460,
+              "storage": 491,
+              "network": 223,
+              "gpu": 366,
+              "efficiency": 90,
+              "total": 1874
             },
             {
               "id": "cluster-3-ns-3-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-3-ns-3",
-              "cpu": 169,
-              "ram": 183,
-              "storage": 154,
-              "network": 105,
-              "gpu": 80,
-              "efficiency": 89,
-              "total": 691
+              "cpu": 120,
+              "ram": 249,
+              "storage": 44,
+              "network": 43,
+              "gpu": 6,
+              "efficiency": 97,
+              "total": 462
             }
           ],
-          "total": 5333
+          "total": 5443
         },
         {
           "id": "cluster-3-ns-4",
@@ -643,55 +643,55 @@
               "id": "cluster-3-ns-4-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-3-ns-4",
-              "cpu": 2223,
-              "ram": 594,
-              "storage": 1251,
-              "network": 657,
-              "gpu": 1047,
-              "efficiency": 86,
-              "total": 5772
+              "cpu": 843,
+              "ram": 1827,
+              "storage": 1407,
+              "network": 534,
+              "gpu": 933,
+              "efficiency": 96,
+              "total": 5544
             },
             {
               "id": "cluster-3-ns-4-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-3-ns-4",
-              "cpu": 407,
-              "ram": 490,
-              "storage": 582,
-              "network": 143,
-              "gpu": 294,
+              "cpu": 668,
+              "ram": 755,
+              "storage": 163,
+              "network": 359,
+              "gpu": 71,
               "efficiency": 91,
-              "total": 1916
+              "total": 2016
             },
             {
               "id": "cluster-3-ns-4-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-3-ns-4",
-              "cpu": 1588,
-              "ram": 454,
-              "storage": 1002,
-              "network": 426,
-              "gpu": 872,
-              "efficiency": 97,
-              "total": 4342
+              "cpu": 786,
+              "ram": 1346,
+              "storage": 968,
+              "network": 380,
+              "gpu": 172,
+              "efficiency": 86,
+              "total": 3652
             },
             {
               "id": "cluster-3-ns-4-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-3-ns-4",
-              "cpu": 222,
-              "ram": 285,
-              "storage": 366,
-              "network": 197,
-              "gpu": 154,
-              "efficiency": 92,
-              "total": 1224
+              "cpu": 647,
+              "ram": 227,
+              "storage": 192,
+              "network": 65,
+              "gpu": 342,
+              "efficiency": 89,
+              "total": 1473
             }
           ],
-          "total": 13254
+          "total": 12685
         }
       ],
-      "total": 50271
+      "total": 49844
     },
     {
       "id": "cluster-4",
@@ -706,52 +706,52 @@
               "id": "cluster-4-ns-1-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-4-ns-1",
-              "cpu": 1173,
+              "cpu": 1359,
               "ram": 1410,
-              "storage": 251,
-              "network": 367,
-              "gpu": 639,
-              "efficiency": 98,
-              "total": 3840
+              "storage": 910,
+              "network": 563,
+              "gpu": 479,
+              "efficiency": 87,
+              "total": 4721
             },
             {
               "id": "cluster-4-ns-1-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-4-ns-1",
-              "cpu": 647,
-              "ram": 432,
-              "storage": 271,
-              "network": 101,
-              "gpu": 287,
-              "efficiency": 85,
-              "total": 1738
+              "cpu": 734,
+              "ram": 197,
+              "storage": 136,
+              "network": 219,
+              "gpu": 32,
+              "efficiency": 96,
+              "total": 1318
             },
             {
               "id": "cluster-4-ns-1-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-4-ns-1",
-              "cpu": 481,
-              "ram": 340,
-              "storage": 220,
-              "network": 201,
-              "gpu": 190,
-              "efficiency": 89,
-              "total": 1432
+              "cpu": 787,
+              "ram": 581,
+              "storage": 492,
+              "network": 336,
+              "gpu": 216,
+              "efficiency": 98,
+              "total": 2412
             },
             {
               "id": "cluster-4-ns-1-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-4-ns-1",
-              "cpu": 309,
-              "ram": 366,
-              "storage": 270,
-              "network": 78,
-              "gpu": 200,
+              "cpu": 275,
+              "ram": 124,
+              "storage": 251,
+              "network": 47,
+              "gpu": 40,
               "efficiency": 90,
-              "total": 1223
+              "total": 737
             }
           ],
-          "total": 8233
+          "total": 9188
         },
         {
           "id": "cluster-4-ns-2",
@@ -762,52 +762,52 @@
               "id": "cluster-4-ns-2-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-4-ns-2",
-              "cpu": 733,
-              "ram": 591,
-              "storage": 175,
-              "network": 262,
-              "gpu": 118,
+              "cpu": 299,
+              "ram": 504,
+              "storage": 411,
+              "network": 155,
+              "gpu": 257,
               "efficiency": 93,
-              "total": 1879
+              "total": 1626
             },
             {
               "id": "cluster-4-ns-2-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-4-ns-2",
-              "cpu": 149,
-              "ram": 87,
-              "storage": 153,
-              "network": 47,
-              "gpu": 58,
-              "efficiency": 90,
-              "total": 494
+              "cpu": 226,
+              "ram": 229,
+              "storage": 152,
+              "network": 40,
+              "gpu": 87,
+              "efficiency": 89,
+              "total": 734
             },
             {
               "id": "cluster-4-ns-2-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-4-ns-2",
-              "cpu": 232,
-              "ram": 358,
-              "storage": 92,
-              "network": 151,
-              "gpu": 249,
+              "cpu": 447,
+              "ram": 170,
+              "storage": 144,
+              "network": 79,
+              "gpu": 127,
               "efficiency": 95,
-              "total": 1082
+              "total": 967
             },
             {
               "id": "cluster-4-ns-2-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-4-ns-2",
-              "cpu": 207,
-              "ram": 57,
-              "storage": 78,
-              "network": 39,
-              "gpu": 90,
-              "efficiency": 91,
-              "total": 471
+              "cpu": 147,
+              "ram": 153,
+              "storage": 90,
+              "network": 51,
+              "gpu": 32,
+              "efficiency": 92,
+              "total": 473
             }
           ],
-          "total": 3926
+          "total": 3800
         },
         {
           "id": "cluster-4-ns-3",
@@ -818,52 +818,52 @@
               "id": "cluster-4-ns-3-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-4-ns-3",
-              "cpu": 207,
-              "ram": 393,
-              "storage": 297,
-              "network": 71,
-              "gpu": 257,
-              "efficiency": 89,
-              "total": 1225
+              "cpu": 312,
+              "ram": 249,
+              "storage": 171,
+              "network": 124,
+              "gpu": 87,
+              "efficiency": 86,
+              "total": 943
             },
             {
               "id": "cluster-4-ns-3-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-4-ns-3",
-              "cpu": 95,
-              "ram": 154,
-              "storage": 76,
-              "network": 57,
+              "cpu": 98,
+              "ram": 155,
+              "storage": 105,
+              "network": 60,
               "gpu": 43,
-              "efficiency": 87,
-              "total": 425
+              "efficiency": 84,
+              "total": 461
             },
             {
               "id": "cluster-4-ns-3-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-4-ns-3",
-              "cpu": 342,
-              "ram": 87,
-              "storage": 173,
-              "network": 63,
-              "gpu": 122,
-              "efficiency": 82,
-              "total": 787
+              "cpu": 324,
+              "ram": 263,
+              "storage": 210,
+              "network": 99,
+              "gpu": 19,
+              "efficiency": 94,
+              "total": 915
             },
             {
               "id": "cluster-4-ns-3-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-4-ns-3",
-              "cpu": 68,
-              "ram": 97,
-              "storage": 76,
-              "network": 37,
-              "gpu": 1,
-              "efficiency": 89,
-              "total": 279
+              "cpu": 61,
+              "ram": 50,
+              "storage": 71,
+              "network": 39,
+              "gpu": 35,
+              "efficiency": 92,
+              "total": 256
             }
           ],
-          "total": 2716
+          "total": 2575
         },
         {
           "id": "cluster-4-ns-4",
@@ -874,55 +874,55 @@
               "id": "cluster-4-ns-4-pod-1",
               "name": "api-01",
               "namespaceId": "cluster-4-ns-4",
-              "cpu": 776,
-              "ram": 431,
-              "storage": 293,
-              "network": 161,
-              "gpu": 88,
-              "efficiency": 83,
-              "total": 1749
+              "cpu": 979,
+              "ram": 370,
+              "storage": 541,
+              "network": 376,
+              "gpu": 289,
+              "efficiency": 85,
+              "total": 2555
             },
             {
               "id": "cluster-4-ns-4-pod-2",
               "name": "worker-02",
               "namespaceId": "cluster-4-ns-4",
-              "cpu": 244,
-              "ram": 101,
-              "storage": 188,
-              "network": 98,
-              "gpu": 54,
-              "efficiency": 92,
-              "total": 685
+              "cpu": 211,
+              "ram": 192,
+              "storage": 112,
+              "network": 71,
+              "gpu": 123,
+              "efficiency": 86,
+              "total": 709
             },
             {
               "id": "cluster-4-ns-4-pod-3",
               "name": "billing-01",
               "namespaceId": "cluster-4-ns-4",
-              "cpu": 758,
-              "ram": 451,
-              "storage": 343,
-              "network": 208,
-              "gpu": 155,
-              "efficiency": 87,
-              "total": 1915
+              "cpu": 688,
+              "ram": 267,
+              "storage": 259,
+              "network": 75,
+              "gpu": 156,
+              "efficiency": 88,
+              "total": 1445
             },
             {
               "id": "cluster-4-ns-4-pod-4",
               "name": "gateway-01",
               "namespaceId": "cluster-4-ns-4",
-              "cpu": 171,
-              "ram": 195,
-              "storage": 66,
-              "network": 55,
-              "gpu": 37,
-              "efficiency": 92,
-              "total": 524
+              "cpu": 198,
+              "ram": 106,
+              "storage": 147,
+              "network": 72,
+              "gpu": 64,
+              "efficiency": 96,
+              "total": 587
             }
           ],
-          "total": 4873
+          "total": 5296
         }
       ],
-      "total": 19748
+      "total": 20859
     }
   ]
 }

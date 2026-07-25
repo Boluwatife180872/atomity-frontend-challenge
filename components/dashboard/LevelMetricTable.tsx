@@ -55,10 +55,9 @@ export function LevelMetricTable({ items, pods, groupBy, podsById }: LevelMetric
           return (
             <motion.tr
               key={item.id}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.4, delay: index * 0.06, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 + index * 0.12, ease: [0.16, 1, 0.3, 1] }}
               className="border-b border-white/5"
             >
               <th scope="row" className="py-3 pr-4 font-medium text-text-primary text-left">

@@ -26,91 +26,76 @@ import { formatCurrency } from "@/lib/format";
 const CHAPTER_COUNT = 4;
 const VH_PER_CHAPTER = 145;
 
+const RESOURCE_ICONS: Record<string, string> = {
+  cpu: "CPU",
+  ram: "RAM",
+  storage: "SSD",
+  network: "NET",
+  gpu: "GPU",
+};
+
 function ApiResourceUnfold({ items, progress }: { items: DrillItem[]; progress: number }) {
-  const revealProgress = Math.max(0, Math.min(progress / 0.6, 1));
-  const splitProgress = Math.max(0, Math.min((progress - 0.45) / 0.55, 1));
+  const revealProgress = Math.max(0, Math.min(progress / 0.58, 1));
+  const splitProgress = Math.max(0, Math.min((progress - 0.5) / 0.5, 1));
   const maxTotal = Math.max(...items.map((item) => item.total), 1);
-  const bodyOpacity = Math.max(0, Math.min((progress - 0.12) / 0.18, 1));
 
   return (
     <motion.div
-      className="w-full"
+      className="absolute inset-0"
       initial={false}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="relative h-72 overflow-hidden rounded-xl">
+      <div className="relative h-full overflow-hidden rounded-xl">
         <motion.div
-          className="absolute left-[10%] top-1/2 h-28 origin-left -translate-y-1/2 overflow-hidden rounded-lg bg-accent-primary shadow-[0_18px_60px_rgba(80,210,141,0.26)]"
+          className="absolute top-[15%] origin-left rounded-lg bg-accent-primary shadow-[0_18px_60px_rgba(80,210,141,0.26)]"
           animate={{
-            width: `${14 + revealProgress * 76}%`,
-            opacity: 1 - splitProgress * 0.92,
-            scaleY: 1 + Math.sin(revealProgress * Math.PI) * 0.08,
+            left: `${10.5 - revealProgress * 0.5}%`,
+            width: `${18 + revealProgress * 72}%`,
+            height: `${62 - revealProgress * 18}%`,
+            opacity: 1 - splitProgress,
           }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         />
 
-        <div className="absolute inset-x-[10%] top-1/2 -translate-y-1/2">
-          <motion.div
-            className="absolute inset-y-0 left-0 rounded-lg bg-white/10"
-            animate={{ width: `${14 + revealProgress * 76}%`, opacity: bodyOpacity }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          />
-        </div>
-
-        <div className="absolute inset-x-[10%] top-1/2 -translate-y-1/2">
+        <div className="absolute inset-x-[10%] top-[15%] flex gap-3">
           {items.map((item, index) => {
-            const height = 56 + (item.total / maxTotal) * 72;
+            const height = 74 + (item.total / maxTotal) * 52;
             const offset = (index - (items.length - 1) / 2) * 10;
-            const laneLeft = 10 + index * 17.2;
 
             return (
               <motion.div
                 key={item.id}
-                className="absolute top-1/2 w-[16%] -translate-y-1/2"
+                className="relative flex-1"
                 initial={false}
                 animate={{
-                  left: `${laneLeft}%`,
                   opacity: splitProgress,
                   y: (1 - splitProgress) * offset,
-                  scaleX: 0.92 + splitProgress * 0.08,
-                  scaleY: 0.95 + splitProgress * 0.05,
+                  scaleX: 0.84 + splitProgress * 0.16,
                 }}
                 transition={{ duration: 0.9, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
               >
                 <motion.div
                   className="relative mx-auto flex w-full flex-col justify-end overflow-hidden rounded-lg border border-white/35 bg-accent-primary shadow-[0_14px_40px_rgba(80,210,141,0.2)]"
-                  animate={{ height, width: `${92 + index * 2}%` }}
+                  animate={{ height }}
                   transition={{ duration: 1, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
                 >
+                  <div className="absolute inset-0 bg-white/10" />
                   <motion.div
-                    className="absolute inset-0 bg-white/10"
-                    animate={{ opacity: bodyOpacity }}
+                    className="absolute left-1/2 top-4 flex h-9 w-9 -translate-x-1/2 items-center justify-center rounded-md border border-white/35 bg-white/15 text-[10px] font-semibold text-white shadow-sm"
+                    animate={{
+                      opacity: Math.max(0, (splitProgress - 0.12) / 0.88),
+                      scale: 0.88 + splitProgress * 0.12,
+                    }}
                     transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                  />
-                  <motion.div
-                    className="absolute inset-x-0 top-0 h-px bg-white/70"
-                    animate={{ opacity: splitProgress }}
-                  />
-                  <motion.div
-                    className="absolute inset-y-0 right-0 w-px bg-white/55"
-                      animate={{ opacity: index < items.length - 1 ? splitProgress : 0 }}
-                  />
-                  <motion.div
-                    className="absolute left-3 top-3 text-left"
-                    animate={{ opacity: Math.max(0, (splitProgress - 0.1) / 0.9) }}
-                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/80">
-                      {item.name}
-                    </p>
-                    <p className="text-[10px] text-white/70">{formatCurrency(item.total)}</p>
+                    {RESOURCE_ICONS[item.id] ?? item.name.slice(0, 3).toUpperCase()}
                   </motion.div>
                 </motion.div>
                 <motion.div
-                  className="mt-2 text-center"
-                  animate={{ opacity: Math.max(0, (splitProgress - 0.18) / 0.82), y: splitProgress ? 0 : -6 }}
-                  transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                  className="mt-3 text-center"
+                  animate={{ opacity: Math.max(0, (splitProgress - 0.25) / 0.75), y: splitProgress ? 0 : -6 }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <p className="text-sm font-semibold text-text-primary">{item.name}</p>
                   <p className="text-xs text-text-secondary">{formatCurrency(item.total)}</p>
@@ -172,11 +157,11 @@ export function ScrollDrillSection() {
 
       setFocusMode(
         (progress >= 0.08 && progress < 0.38) ||
-          (progress >= 0.48 && progress < 0.68) ||
-          (progress >= 0.7 && progress < 0.94)
+          (progress >= 0.48 && progress < 0.72) ||
+          (progress >= 0.82 && progress < 0.96)
       );
 
-      const nextStage = progress < 0.38 ? 0 : progress < 0.68 ? 1 : progress < 0.94 ? 2 : 3;
+      const nextStage = progress < 0.43 ? 0 : progress < 0.72 ? 1 : progress < 0.84 ? 2 : 3;
       setStage((current) => (current === nextStage ? current : nextStage));
     }
 
@@ -194,7 +179,7 @@ export function ScrollDrillSection() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", updateFromScroll);
     };
-  }, []);
+  }, [scrollProgress]);
 
   if (isLoading) {
     return (
@@ -255,11 +240,13 @@ export function ScrollDrillSection() {
   ];
   const current = stageConfig[stage];
   const gammaSplitProgress = Math.max(0, Math.min((storyProgress - 0.12) / 0.24, 1));
-  const productionSplitProgress = Math.max(0, Math.min((storyProgress - 0.49) / 0.17, 1));
-  const resourceSplitProgress = Math.max(0, Math.min((storyProgress - 0.7) / 0.22, 1));
-  const showApiUnfold = stage === 2 && resourceSplitProgress > 0.01;
+  const productionSplitProgress = Math.max(0, Math.min((storyProgress - 0.5) / 0.2, 1));
+  const resourceSplitProgress = Math.max(0, Math.min((storyProgress - 0.84) / 0.16, 1));
+  const showApiUnfold = stage === 3;
   const chartFade = showApiUnfold ? Math.max(0, 1 - resourceSplitProgress / 0.28) : 1;
-  const showDashboardChart = stage < 3 || stage === 3;
+  const showDashboardChart = stage < 3;
+  const isGammaHandoff = stage === 1 && storyProgress < 0.48;
+  const isProductionHandoff = stage === 2 && storyProgress < 0.78;
 
   function jumpToChapter(index: number) {
     if (!trackRef.current) return;
@@ -279,20 +266,20 @@ export function ScrollDrillSection() {
     >
       <div className="sticky top-0 h-screen overflow-hidden">
         <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute inset-0 flex items-center justify-center px-4 py-8 sm:px-8"
+          initial={{ opacity: 0, scale: 0.95, y: 32 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0 flex items-center justify-center px-4 py-12 sm:px-8 sm:py-16"
         >
-          <div className="w-full max-w-4xl">
-            <div className="mb-4 flex items-center justify-between rounded-full border border-gray-200/70 bg-white/80 px-4 py-2 shadow-sm backdrop-blur">
+          <div className="w-full max-w-3xl">
+            <div className="mb-3 flex items-center justify-between rounded-full border border-gray-200/70 bg-white/80 px-4 py-2 shadow-sm backdrop-blur">
               <p className="text-sm font-medium text-text-primary">Cloud Cost Explorer</p>
               <p className="text-xs text-text-secondary">Cluster / Namespace / Pod / Resource</p>
             </div>
 
             {showDashboardChart && (
-              <Card className="p-5 sm:p-6 mb-4 overflow-hidden">
-                <div className="mb-5 flex items-center justify-between gap-4">
+              <Card className="p-4 sm:p-5 mb-3 overflow-hidden">
+                <div className="mb-4 flex items-center justify-between gap-4">
                   <AnimatePresence mode="popLayout">
                     <motion.h2
                       key={current.title}
@@ -309,49 +296,37 @@ export function ScrollDrillSection() {
                     Stage {stage + 1} / {CHAPTER_COUNT}
                   </span>
                 </div>
-                <div className="relative min-h-72 rounded-xl bg-[linear-gradient(to_right,rgba(3,3,3,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(3,3,3,0.06)_1px,transparent_1px)] bg-[size:25%_25%] py-5">
+                <div className="relative min-h-64 rounded-xl bg-[linear-gradient(to_right,rgba(3,3,3,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(3,3,3,0.06)_1px,transparent_1px)] bg-[size:25%_25%] py-4">
                   <motion.div
                     animate={{ opacity: chartFade, scale: showApiUnfold ? 0.96 : 1 }}
                     transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                     className="inset-x-0"
                   >
-                  {stage < 3 ? (
-                    <LevelBars
-                      items={current.items}
-                      activeItemId={current.activeItemId}
-                      onSelectItem={() => {}}
-                      interactive={false}
-                      focusMode={focusMode}
-                      splitItems={
-                        stage === 0
-                          ? namespaceItems
-                          : stage === 1
-                          ? podItems
-                          : undefined
-                      }
-                      splitProgress={
-                        stage === 0
-                          ? gammaSplitProgress
-                          : stage === 1
-                          ? productionSplitProgress
-                          : 0
-                      }
-                      splitMode={stage === 1 ? "fan" : "stack"}
-                      animateEntrance={stage === 0 && storyProgress < 0.08}
-                    />
-                  ) : (
-                    <ApiResourceUnfold items={resourceItems} progress={1} />
-                  )}
+                  <LevelBars
+                    items={current.items}
+                    activeItemId={current.activeItemId}
+                    onSelectItem={() => {}}
+                    interactive={false}
+                    focusMode={focusMode}
+                    splitItems={
+                      stage === 0
+                        ? namespaceItems
+                        : stage === 1
+                        ? podItems
+                        : undefined
+                    }
+                    splitProgress={
+                      stage === 0
+                        ? gammaSplitProgress
+                        : stage === 1
+                        ? productionSplitProgress
+                        : 0
+                    }
+                    splitMode={stage === 1 ? "fan" : "stack"}
+                    animateEntrance={stage === 0 && storyProgress < 0.08}
+                    settleInstantly={isGammaHandoff || isProductionHandoff}
+                  />
                   </motion.div>
-                  {showApiUnfold && stage < 3 && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: chartFade < 0.3 ? 1 - chartFade / 0.3 : 0 }}
-                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                      <ApiResourceUnfold items={resourceItems} progress={resourceSplitProgress} />
-                    </motion.div>
-                  )}
                 </div>
               </Card>
             )}
@@ -362,7 +337,7 @@ export function ScrollDrillSection() {
                 <motion.div
                   key={`table-${stage}`}
                   className={showApiUnfold ? "absolute inset-x-0 top-0 pointer-events-none" : ""}
-                  initial={{ opacity: 0, y: 18 }}
+                  initial={isGammaHandoff || isProductionHandoff ? false : { opacity: 0, y: 18 }}
                   animate={{
                     opacity: showApiUnfold ? Math.max(0, 1 - resourceSplitProgress / 0.22) : 1,
                     y: showApiUnfold ? -12 * resourceSplitProgress : 0,
@@ -371,7 +346,7 @@ export function ScrollDrillSection() {
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <Card className="p-5 sm:p-6 overflow-x-auto">
+                  <Card className="p-4 sm:p-5 overflow-x-auto">
                     <LevelMetricTable
                       items={current.items}
                       pods={current.pods}
@@ -380,6 +355,28 @@ export function ScrollDrillSection() {
                   />
                 </Card>
               </motion.div>
+              )}
+              {!current.table && (
+                <div className="relative min-h-[360px]">
+                  <div className="mb-4 flex items-center justify-between gap-4">
+                    <motion.h2
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                      className="text-text-primary text-lg font-semibold"
+                    >
+                      Resources from {heroPath.pod.name}
+                    </motion.h2>
+                    <span className="rounded-full bg-bg-surface-hover px-3 py-1 text-xs font-medium text-text-secondary">
+                      Stage {stage + 1} / {CHAPTER_COUNT}
+                    </span>
+                  </div>
+                  <ApiResourceUnfold
+                    key="api-resource-final"
+                    items={resourceItems}
+                    progress={resourceSplitProgress}
+                  />
+                </div>
               )}
             </AnimatePresence>
             </div>
