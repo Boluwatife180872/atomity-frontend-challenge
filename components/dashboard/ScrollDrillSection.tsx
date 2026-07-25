@@ -22,6 +22,7 @@ import {
   type DrillItem,
 } from "@/lib/drill";
 import { formatCurrency } from "@/lib/format";
+import { CountUp } from "@/components/ui/CountUp";
 
 const CHAPTER_COUNT = 4;
 const VH_PER_CHAPTER = 145;
@@ -100,7 +101,7 @@ function ApiResourceUnfold({ items, progress }: { items: DrillItem[]; progress: 
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <p className="text-[10px] font-semibold text-text-primary sm:text-sm">{item.name}</p>
-                  <p className="text-[9px] text-text-secondary sm:text-xs">{formatCurrency(item.total)}</p>
+                  <p className="text-[9px] text-text-secondary sm:text-xs"><CountUp value={item.total} /></p>
                 </motion.div>
               </motion.div>
             );
@@ -125,8 +126,10 @@ function ChapterDot({
     <motion.button
       style={{ opacity }}
       onClick={onClick}
+      whileHover={{ scale: 1.35 }}
+      whileTap={{ scale: 0.9 }}
       aria-label={`Jump to chapter ${index + 1}`}
-      className="w-2 h-2 rounded-full bg-accent-primary"
+      className="w-2.5 h-2.5 rounded-full bg-accent-primary transition-shadow hover:shadow-lg hover:shadow-accent-primary/50"
     />
   );
 }

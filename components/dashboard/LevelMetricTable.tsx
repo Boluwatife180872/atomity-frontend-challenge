@@ -58,20 +58,33 @@ export function LevelMetricTable({ items, pods, groupBy, podsById }: LevelMetric
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 + index * 0.12, ease: [0.16, 1, 0.3, 1] }}
-              className="border-b border-white/5"
+              className="border-b border-white/5 transition-colors hover:bg-white/[0.04] group"
             >
               <th scope="row" className="py-2 pr-2 font-medium text-text-primary text-left sm:py-3 sm:pr-4">
                 {item.name}
               </th>
-              {COLUMNS.map((col) => (
-                <td key={col.key} className="py-2 px-2 text-text-secondary sm:py-3 sm:px-3 md:px-4">
-                  <CountUp value={metricSums[col.key]} />
-                </td>
-              ))}
-              <td className="py-2 px-2 text-text-secondary sm:py-3 sm:px-3 md:px-4">
+              {COLUMNS.map((col) => {
+                const eff = averageEfficiency(scopedPods);
+                return (
+                  <td
+                    key={col.key}
+                    className="py-2 px-2 text-text-secondary sm:py-3 sm:px-3 md:px-4 cursor-help transition-colors group-hover:text-text-primary"
+                    title={`Telemetry Context - ${col.label}: ${metricSums[col.key]} units across ${scopedPods.length} pods (Avg Efficiency: ${eff}%)`}
+                  >
+                    <CountUp value={metricSums[col.key]} />
+                  </td>
+                );
+              })}
+              <td
+                className="py-2 px-2 text-text-secondary sm:py-3 sm:px-3 md:px-4 cursor-help transition-colors group-hover:text-text-primary"
+                title={`Cluster Efficiency Score: Average efficiency across ${scopedPods.length} associated pods is ${averageEfficiency(scopedPods)}%`}
+              >
                 <CountUp value={averageEfficiency(scopedPods)} formatter={(value) => `${value}%`} />
               </td>
-              <td className="py-2 pl-2 text-right font-semibold text-text-primary sm:py-3 sm:pl-4">
+              <td
+                className="py-2 pl-2 text-right font-semibold text-text-primary sm:py-3 sm:pl-4 cursor-help"
+                title={`Total cost for ${item.name}`}
+              >
                 <CountUp value={item.total} />
               </td>
             </motion.tr>
