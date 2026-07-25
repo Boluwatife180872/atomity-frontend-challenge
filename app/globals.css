@@ -3,19 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --color-bg-primary: #fbf9f4;
+  --color-bg-surface: #ffffff;
+  --color-bg-surface-hover: #f1ede2;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --color-text-primary: #2b2625;
+  --color-text-secondary: #706663;
+  --color-text-muted: #8f837f;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --color-accent-primary: #3b604e; 
+  --color-accent-success: #3b604e;
+  --color-accent-error: #b2533e;   
+  --color-accent-warning: #c48b45;
+
+  --color-metric-cpu: #5a504e;
+  --color-metric-ram: #5a504e;
+  --color-metric-storage: #5a504e;
+  --color-metric-network: #5a504e;
+  --color-metric-gpu: #5a504e;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
 }
