@@ -275,10 +275,12 @@ export function ScrollDrillSection() {
 
   function jumpToChapter(index: number) {
     if (!trackRef.current) return;
-    const trackTop = trackRef.current.offsetTop;
+    const absoluteTop = trackRef.current.offsetTop;
     const trackHeight = trackRef.current.offsetHeight;
-    const scrollableDistance = trackHeight - window.innerHeight;
-    const target = trackTop + (index / (CHAPTER_COUNT - 1)) * scrollableDistance;
+    const scrollableDistance = Math.max(trackHeight - window.innerHeight, 1);
+    const targetProgresses = [0.10, 0.52, 0.78, 1.0];
+    const progress = targetProgresses[index] ?? (index / (CHAPTER_COUNT - 1));
+    const target = absoluteTop + progress * scrollableDistance;
     window.scrollTo({ top: target, behavior: "smooth" });
   }
 
